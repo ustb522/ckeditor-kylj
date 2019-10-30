@@ -7,16 +7,12 @@
 import DecoupledEditorBase from '@ckeditor/ckeditor5-editor-decoupled/src/decouplededitor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
-import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
-import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
-import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily';
-import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import Font from '@ckeditor/ckeditor5-font/src/font';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
-import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
-import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
@@ -26,8 +22,8 @@ import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
-import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
@@ -36,22 +32,15 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter'
-
 export default class DecoupledEditor extends DecoupledEditorBase { }
 
 // Plugins to include in the build.
 DecoupledEditor.builtinPlugins = [
 	Essentials,
-	Alignment,
-	FontSize,
-	FontFamily,
-	Highlight,
 	UploadAdapter,
 	Autoformat,
 	Bold,
 	Italic,
-	Strikethrough,
-	Underline,
 	BlockQuote,
 	CKFinder,
 	EasyImage,
@@ -62,7 +51,6 @@ DecoupledEditor.builtinPlugins = [
 	ImageToolbar,
 	ImageUpload,
 	Indent,
-	IndentBlock,
 	Link,
 	List,
 	MediaEmbed,
@@ -70,17 +58,23 @@ DecoupledEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	Base64UploadAdapter
+	Base64UploadAdapter,
+	ImageResize,
+	Font,
+	Alignment,
 ];
 
 // Editor configuration.
 DecoupledEditor.defaultConfig = {
 	toolbar: {
+		placeholder: "请输入内容...",
 		items: [
 			'heading',
 			'|',
 			'fontsize',
 			'fontfamily',
+			'fontColor',
+			'fontBackgroundColor',
 			'|',
 			'bold',
 			'italic',
@@ -128,5 +122,5 @@ DecoupledEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'zh-cn'
 };
