@@ -32,6 +32,9 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter'
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import StrikeThrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 export default class DecoupledEditor extends DecoupledEditorBase { }
 
 // Plugins to include in the build.
@@ -62,6 +65,9 @@ DecoupledEditor.builtinPlugins = [
 	ImageResize,
 	Font,
 	Alignment,
+	Underline,
+	StrikeThrough,
+	Highlight
 ];
 
 // Editor configuration.
