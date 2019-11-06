@@ -17,7 +17,7 @@ module.exports = {
 	devtool: 'source-map',
 	performance: { hints: false },
 
-	entry: path.resolve(__dirname, 'src', 'ckeditor.js'),
+	entry: [path.resolve(__dirname, './node_modules/@babel/polyfill/dist/polyfill.min.js'), path.resolve(__dirname, 'src', 'ckeditor.js')],
 
 	output: {
 		// The name under which the editor will be exported.
@@ -83,19 +83,6 @@ module.exports = {
 
 				]
 			},
-			{
-				test: /\.js$/,
-				loader: 'babel-loader',
-				options:{
-					presets:[
-						'@babel/env'
-					],
-					plugins:[
-						'array-includes'
-					]
-				}
-
-			}
 		]
 	}
 };
