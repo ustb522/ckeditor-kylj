@@ -89,6 +89,9 @@ module.exports = {
 				options:{
 					presets:[
 						'@babel/env'
+					],
+					plugins:[
+						'array-includes'
 					]
 				}
 
