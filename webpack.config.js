@@ -88,7 +88,8 @@ module.exports = {
 				loader: 'babel-loader',
 				options:{
 					plugins:[
-						'@babel/transform-classes'
+						'@babel/transform-classes',
+						'@babel/transform-template-literals'
 					]
 				}
 
