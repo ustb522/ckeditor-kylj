@@ -85,7 +85,13 @@ module.exports = {
 			},
 			{
 				test: /\.js$/,
-				use: ['babel-loader']
+				loader: 'babel-loader',
+				options:{
+					plugins:[
+						'@babel/transform-classes'
+					]
+				}
+
 			}
 		]
 	}
